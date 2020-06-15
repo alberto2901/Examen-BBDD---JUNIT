@@ -75,18 +75,18 @@ public class PedidosDaoTest {
         System.out.println("\n---------------");
         System.out.println("Test de Insert");
         System.out.println("---------------");
-        Date dato_1 = new Date(1996-07-11);
-        Date dato_2 = new Date(1996-07-13);
-        Date dato_3 = new Date(1996-07-17);
+        Date fecha1 = new Date(1996-07-11);
+        Date fecha2 = new Date(1996-07-13);
+        Date fecha3 = new Date(1996-07-17);
         BigDecimal bd = new BigDecimal(1555.669);
         
-        Pedido pedido1 = new Pedido(12097, 5, 9, dato_1, dato_2, dato_3, 2, bd, "test", "test", "test", "test", "test", "test");
+        Pedido pedido1 = new Pedido(12097, 5, 9, fecha1, fecha2, fecha3, 2, bd, "test", "test", "test", "test", "test", "test");
         Integer expResult1 = null;
         Integer result = instance.insert(pedido1);
         assertNotEquals(expResult1,result);
         instance.delete(result);
         
-        Pedido pedido2 = new Pedido(16477, 5, 9, dato_1, dato_2, dato_3, 20,bd, "test", "test", "test", "test", "test", "test");
+        Pedido pedido2 = new Pedido(16477, 5, 9, fecha1, fecha2, fecha3, 20,bd, "test", "test", "test", "test", "test", "test");
         Integer expResult2 = null;
         Integer result2 = instance.insert(pedido2);
         assertEquals(expResult2,result2);
@@ -98,20 +98,20 @@ public class PedidosDaoTest {
         System.out.println("\n---------------");
         System.out.println("Test de Update");
         System.out.println("---------------");
-        Date dato_1 = new Date(1996-07-11);
-        Date dato_2 = new Date(1996-07-13);
-        Date dato_3 = new Date(1996-07-17);
+        Date fecha1 = new Date(1996-07-11);
+        Date fecha2 = new Date(1996-07-13);
+        Date fecha3 = new Date(1996-07-17);
         BigDecimal bd = new BigDecimal(1555.669);
         
-        Pedido pedido = new Pedido(12097, 5, 9, dato_1, dato_2, dato_3,2,bd, "test", "test", "test", "test", "test", "test");
+        Pedido pedido = new Pedido(12097, 5, 9, fecha1, fecha2, fecha3,2,bd, "test", "test", "test", "test", "test", "test");
         Integer resultins = instance.insert(pedido);
         Integer expResult = 1;
         
-        Pedido pedidoact = new Pedido(resultins, 5, 9, dato_1, dato_2, dato_3,2,bd, "test", "test", "test", "test", "test", "test");
+        Pedido pedidoact = new Pedido(resultins, 5, 9, fecha1, fecha2, fecha3,2,bd, "test", "test", "test", "test", "test", "test");
         Integer result = instance.update(pedidoact);
         assertEquals(expResult,result);
         
-        Pedido pedidoerror = new Pedido(resultins, 5, 9, dato_1, dato_2, dato_3,20,bd, "test", "test", "test", "test", "test", "test");
+        Pedido pedidoerror = new Pedido(resultins, 5, 9, fecha1, fecha2, fecha3,20,bd, "test", "test", "test", "test", "test", "test");
         result = instance.update(pedidoerror);
         assertNotEquals(expResult,result);
         
@@ -124,12 +124,12 @@ public class PedidosDaoTest {
         System.out.println("\n---------------");
         System.out.println("Test de Delete");
         System.out.println("---------------");
-        Date dato_1 = new Date(1996-07-11);
-        Date dato_2 = new Date(1996-07-13);
-        Date dato_3 = new Date(1996-07-17);
+        Date fecha1 = new Date(1996-07-11);
+        Date fecha2 = new Date(1996-07-13);
+        Date fecha3 = new Date(1996-07-17);
         BigDecimal bd = new BigDecimal(1555.669);
         
-        Pedido pedido = new Pedido(12097, 5, 9, dato_1, dato_2, dato_3,2,bd, "test", "test", "test", "test", "test", "test");
+        Pedido pedido = new Pedido(12097, 5, 9, fecha1, fecha2, fecha3,2,bd, "test", "test", "test", "test", "test", "test");
         Integer resultins = instance.insert(pedido);
         Integer expResult = 1;
         Integer result = instance.delete(resultins);
